@@ -24,13 +24,15 @@ var Text = require('../lib/text');
 
 exports['Text'] = {
   'Text test': function(test) {
-    test.expect(4);
+    test.expect(5);
 
     test.equal(Text.getWidth('abcde'), 5, '5 half width characters must be 5');
     test.equal(Text.getWidth('あいうえお'), 10, '5 full width characters must be 10');
 
     test.equal(Text.repeat('a', 5), 'aaaaa', '5 characters');
     test.equal(Text.repeat('a'), 'a', '1 character if not specified count');
+
+    test.equal(Text.rjust('a', 5, ' '), 'a    ', 'padding 4 right spaces');
 
     test.done();
   },

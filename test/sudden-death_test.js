@@ -24,15 +24,40 @@ var SuddenDeath = require('../lib/sudden-death');
 
 exports['SuddenDeath'] = {
   'Sudden death test': function(test) {
-    test.expect(1);
+    test.expect(3);
 
     var suddenDeath = new SuddenDeath();
 
+    /* Test single line. */
     suddenDeath.setText('突然の死');
+
     test.equal(
       suddenDeath.say(),
-      '＿人人人人人人＿\n＞　突然の死　＜\n￣ＹＹＹＹＹＹ￣',
-      'Say "Sudden death"'
+      [
+        '＿人人人人人人＿',
+        '＞　突然の死　＜',
+        '￣ＹＹＹＹＹＹ￣'
+      ].join('\n'),
+      'say "Sudden death"'
+    );
+
+    /* Test miultiple lines. */
+    suddenDeath.setText([
+      '突然の',
+      '死'
+    ].join('\n'));
+
+    test.equal(suddenDeath.getMaxTextWidth(), 6, 'max text width is 6');
+
+    test.equal(
+      suddenDeath.say(),
+      [
+        '＿人人人人人＿',
+        '＞　突然の　＜',
+        '＞　死　　　＜',
+        '￣ＹＹＹＹＹ￣'
+      ].join('\n'),
+      'say 2 lines "Sudden death"'
     );
 
     test.done();
