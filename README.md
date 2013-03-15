@@ -3,7 +3,7 @@
 ```
 ＿人人人人人人＿
 ＞　突然の死　＜
-￣ＹＹＹＹＹＹ￣
+￣^Y^Y^Y^Y^Y^Y￣
 ```
 
 Generates "Sudden death".
