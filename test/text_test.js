@@ -1,6 +1,6 @@
 'use strict';
 
-var SuddenDeath = require('../lib/sudden-death');
+var Text = require('../lib/text');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -22,18 +22,15 @@ var SuddenDeath = require('../lib/sudden-death');
     test.ifError(value)
 */
 
-exports['SuddenDeath'] = {
-  'Sudden death test': function(test) {
-    test.expect(1);
+exports['Text'] = {
+  'Text test': function(test) {
+    test.expect(4);
 
-    var suddenDeath = new SuddenDeath();
+    test.equal(Text.getWidth('abcde'), 5, '5 half width characters must be 5');
+    test.equal(Text.getWidth('あいうえお'), 10, '5 full width characters must be 10');
 
-    suddenDeath.setText('突然の死');
-    test.equal(
-      suddenDeath.say(),
-      '＿人人人人人人＿\n＞　突然の死　＜\n￣ＹＹＹＹＹＹ￣',
-      'Say "Sudden death"'
-    );
+    test.equal(Text.repeat('a', 5), 'aaaaa', '5 characters');
+    test.equal(Text.repeat('a'), 'a', '1 character if not specified count');
 
     test.done();
   },
