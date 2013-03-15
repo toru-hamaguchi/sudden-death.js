@@ -36,7 +36,7 @@ exports['SuddenDeath'] = {
       [
         '＿人人人人人人＿',
         '＞　突然の死　＜',
-        '￣ＹＹＹＹＹＹ￣'
+        '￣^Y^Y^Y^Y^Y^Y￣'
       ].join('\n'),
       'say "Sudden death"'
     );
@@ -55,7 +55,7 @@ exports['SuddenDeath'] = {
         '＿人人人人人＿',
         '＞　突然の　＜',
         '＞　死　　　＜',
-        '￣ＹＹＹＹＹ￣'
+        '￣^Y^Y^Y^Y^Y￣'
       ].join('\n'),
       'say 2 lines "Sudden death"'
     );
