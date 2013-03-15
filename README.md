@@ -24,6 +24,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+### 2013-03-16 v0.1.1
+
+* Supports multiple lines
+
 ### 2013-02-26 v0.1.0
 
 * First release
